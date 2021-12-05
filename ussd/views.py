@@ -3,12 +3,12 @@ from django.shortcuts import render
 import africastalking
 from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
-def  welcome(request):
+def  Murakaza(request):
     return render(request, 'index.html')
 
 #  python3 -m pip install africastalking
-AfricasUsername='tuganimana01@gmail.com'
-api_key ='1526a36fc4c257d18d07bcfd53b0d18324ce969a5cd6981a35abfa6028b259ac'
+AfricasUsername='mucyoadonis@gmail.com'
+api_key ='d70ce442317ba09027e1572c8e3a9c6c427a21a963f2b25727ac5cfee3890746'
 africastalking.initialize(AfricasUsername,api_key)
 
 @csrf_exempt
@@ -25,34 +25,35 @@ def ussdApp(request):
         response =""
         #  main menu for our application
         if text == '':
-            response =  "CON Murakaza neza kuri Idafarm \n"
-            response += "1. Kwandikisha igihingwa \n"
-            response += "2. Kumenya ingengabihe \n"
+            response =  "CON Murakaza neza kuri Mushtech \n"
+            response += "1. Ikinyarwanda \n"
+            response += "2. English\n"
         elif text == '1':
 
-            response = "CON Hitamo igihingwa \n"
-            response += "1. Ibinyomoro \n"
-            response += "2. Indimu"
+            response = "CON Amakuru ukeneye yose ku gihumyo \n"
+            response += "1. igihumyo ni iki? \n"
+            response += "2. Amoko y'ibihumyo bihingwa mu Rwanda \n"
+            response += "3. Akamaro K'ibihumyo \n"
+
         elif text == '1*1':
-            product="Ibinyomoro"
-            response = "CON shyiramo ubuso bw'ubutaka bwawe bw' "+str(product)+"\n"
+            product="Menya igihumyo icyo aricyo"
+            response = "CON Igihumyo ni igihingwa cyihariye; ntikigira indabo cyangwa imbuto.Kigizwe n’ibice bitatu by ingenzi: Umurundugushyu, Umuringa n’ingofero.  Umurundugushu wacyo ntugira imizi, amashami n’amababi. Ibi bisimburwa n’umuringa ndetse n’ingofero. Uyu murundugushu niwo ufata ku mugina aho giteye ukavomamo intungamubiri. "+str(product)+"\n"
         elif category =='1*1' and int(len(level)) == 3 and str(level[2]) in  str(level):
-            response = "CON Uwo mubufatanyije \n"
-        elif category =='1*1' and int(len(level)) == 4 and str(level[3]) in  str(level):
-            response = "CON Shyiramo nimero y'irangamuntu yuwo mufatanyije \n"
-        elif category =='1*1' and int(len(level)) == 5 and str(level[4]) in  str(level):
-            response = "END Murakoze kwiyandikisha kuri Ida farm \n"
+            response = "END Murakoze gusura Mushtech \n"
 
 
         elif text == '1*2':
-            product ="Indimu"
-            response ="CON shyiramo ubuso bw'ubutaka bwawe bw' "+str(product)+"\n"
-        elif category =='1*2' and int(len(level)) == 3 and str(level[2]) in  str(level):
-            response = "CON Uwo mubufatanyije \n"
-        elif category =='1*2' and int(len(level)) == 4 and str(level[3]) in  str(level):
-            response = "CON Shyiramo nimero y'irangamuntu yuwo mufatanyije \n"
-        elif category =='1*2' and int(len(level)) == 5 and str(level[4]) in  str(level):
-            response = "END Murakoze kwiyandikisha kuri Ida farm \n"
+            respone ="CON Dore amoko y'ibihumyo bihingwa mu Rwanda"
+            response += "1. Pleurote ( Soma Pulerote) \n"
+            response += "2. Ganoderma ( soma Ganoderima) \n"
+        
+        
+        # elif category =='1*2' and int(len(level)) == 3 and str(level[2]) in  str(level):
+        #     response = "CON Uwo mubufatanyije \n"
+        # elif category =='1*2' and int(len(level)) == 4 and str(level[3]) in  str(level):
+        #     response = "CON Shyiramo nimero y'irangamuntu yuwo mufatanyije \n"
+        # elif category =='1*2' and int(len(level)) == 5 and str(level[4]) in  str(level):
+        #     response = "END Murakoze kwiyandikisha kuri Ida farm \n"
          
         #  ======================== INGENGABIHE==================
         elif text == '2':
